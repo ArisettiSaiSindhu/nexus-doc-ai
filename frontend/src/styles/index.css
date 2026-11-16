@@ -1,0 +1,48 @@
+@import './tokens.css';
+@import './typography.css';
+@import './backgrounds.css';
+@import './buttons.css';
+@import './cards.css';
+@import './tables.css';
+@import './forms.css';
+@import './modals.css';
+@import './upload.css';
+@import './animations.css';
+@import './interactive.css';
+@import './light-theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Base Resets & Defaults */
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-primary);
+}

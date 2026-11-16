@@ -1,0 +1,462 @@
+/* ========================================================================= */
+/* EXTREME UI/UX CRAFTSMANSHIP & ADVANCED INTERACTION DESIGN SYSTEM          */
+/* NEXUS DOC AI — Awwwards / Uiverse Inspired Engineering                    */
+/* ========================================================================= */
+
+/* 1. SIGNATURE AI GENERATE BUTTON (Cinematic Black & Red Identity) */
+.btn-nexus-generate {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2.25rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(180deg, #1f1414 0%, #0d0707 100%);
+  border: 1px solid rgba(255, 59, 47, 0.45);
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 59, 47, 0.28),
+              inset 0 1px 1px rgba(255, 255, 255, 0.2),
+              inset 0 -2px 10px rgba(0, 0, 0, 0.8);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  isolation: isolate;
+}
+
+/* Outer Spinning Conic Rainbow/Red Halo */
+.btn-nexus-generate::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(255, 59, 47, 0.15) 20%,
+    #ff3b2f 45%,
+    #ffffff 50%,
+    #ff5147 55%,
+    rgba(255, 59, 47, 0.15) 80%,
+    transparent 100%
+  );
+  z-index: -2;
+  animation: rotateConic 3.2s linear infinite;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Inner Background Shield */
+.btn-nexus-generate::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 13px;
+  background: linear-gradient(180deg, #1c0e0e 0%, #0b0505 100%);
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Hover Physics */
+.btn-nexus-generate:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(255, 81, 71, 0.9);
+  box-shadow: 0 0 40px rgba(255, 59, 47, 0.55),
+              0 15px 35px -5px rgba(255, 59, 47, 0.3),
+              inset 0 1px 2px rgba(255, 255, 255, 0.4),
+              inset 0 0 20px rgba(255, 59, 47, 0.3);
+  letter-spacing: 0.07em;
+}
+
+.btn-nexus-generate:hover::before {
+  opacity: 1;
+  filter: blur(4px);
+  animation-duration: 2s;
+}
+
+.btn-nexus-generate:hover::after {
+  background: linear-gradient(180deg, #2a1212 0%, #120707 100%);
+}
+
+.btn-nexus-generate:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 0 20px rgba(255, 59, 47, 0.4);
+}
+
+/* Generate Icon Animated Reactance */
+.btn-nexus-generate .icon-sparkle {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  color: #ff5147;
+  filter: drop-shadow(0 0 8px #ff3b2f);
+}
+
+.btn-nexus-generate:hover .icon-sparkle {
+  transform: rotate(180deg) scale(1.25);
+  color: #ffffff;
+  filter: drop-shadow(0 0 12px #ff3b2f);
+}
+
+/* 2. BORDER TRACING BUTTON */
+.btn-border-trace {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: #111113;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-border-trace::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #ff3b2f
+  );
+  animation: rotateConic 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-border-trace::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  background: #111113;
+  border-radius: 10.5px;
+  z-index: 0;
+  transition: background 0.25s ease;
+}
+
+.btn-border-trace:hover::before {
+  opacity: 1;
+}
+
+.btn-border-trace:hover::after {
+  background: #18181b;
+}
+
+.btn-border-trace:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 59, 47, 0.25);
+  color: #ffffff;
+}
+
+.btn-border-trace > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. GLOWING OUTLINE BUTTON */
+.btn-glow-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(255, 59, 47, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glow-outline:hover {
+  border-color: #ff3b2f;
+  background: rgba(255, 59, 47, 0.12);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 59, 47, 0.35), inset 0 0 10px rgba(255, 59, 47, 0.15);
+}
+
+.btn-glow-outline:active {
+  transform: translateY(0);
+}
+
+/* 4. SHIMMER SWEEP BUTTON */
+.btn-shimmer-sweep {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff3b2f 0%, #d82b20 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(255, 59, 47, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shimmer-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: translateX(-180%) skewX(-25deg);
+  pointer-events: none;
+}
+
+.btn-shimmer-sweep:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 59, 47, 0.55), 0 0 25px rgba(255, 59, 47, 0.4);
+}
+
+.btn-shimmer-sweep:hover::after {
+  animation: shineSweep 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 5. CUSTOM ANIMATED TOGGLE SWITCH */
+.nexus-toggle-track {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2px;
+}
+
+.nexus-toggle-track.active {
+  background: #ff3b2f;
+  border-color: #ff5147;
+  box-shadow: 0 0 16px rgba(255, 59, 47, 0.5);
+}
+
+.nexus-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.nexus-toggle-track.active .nexus-toggle-thumb {
+  transform: translateX(24px);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* 6. SEGMENTED CONTROL */
+.nexus-segmented-container {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  background: #111113;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.nexus-segmented-item {
+  position: relative;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.nexus-segmented-item:hover {
+  color: #ffffff;
+}
+
+.nexus-segmented-item.active {
+  color: #ffffff;
+  background: #18181b;
+  border: 1px solid rgba(255, 59, 47, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 59, 47, 0.2);
+}
+
+/* 7. CUSTOM ANIMATED CHECKBOX */
+.nexus-checkbox-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: #111113;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nexus-checkbox-box:hover {
+  border-color: #ff3b2f;
+  box-shadow: 0 0 10px rgba(255, 59, 47, 0.2);
+}
+
+.nexus-checkbox-box.checked {
+  background: #ff3b2f;
+  border-color: #ff3b2f;
+  box-shadow: 0 0 12px rgba(255, 59, 47, 0.45);
+}
+
+/* 8. ORBITAL SCI-FI LOADER */
+.nexus-orbital-spinner {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.nexus-orbital-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.nexus-orbital-ring-1 {
+  border-top-color: #ff3b2f;
+  border-right-color: #ff3b2f;
+  animation: rotateConic 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.nexus-orbital-ring-2 {
+  inset: 6px;
+  border-bottom-color: #ffffff;
+  border-left-color: rgba(255, 255, 255, 0.4);
+  animation: rotateCounter 1.8s linear infinite;
+}
+
+.nexus-orbital-ring-3 {
+  inset: 12px;
+  border-top-color: #ff5147;
+  animation: rotateConic 0.9s ease-in-out infinite;
+}
+
+.nexus-orbital-core {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: #ff3b2f;
+  box-shadow: 0 0 16px #ff3b2f;
+  animation: pulseCore 1.5s ease-in-out infinite alternate;
+}
+
+/* 9. RADAR SCAN HUD ANIMATION */
+.nexus-radar-grid {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 59, 47, 0.05) 0%, transparent 70%);
+  border: 1px solid rgba(255, 59, 47, 0.25);
+  overflow: hidden;
+}
+
+.nexus-radar-sweep {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform-origin: top left;
+  background: conic-gradient(from 0deg, rgba(255, 59, 47, 0.4) 0deg, transparent 60deg);
+  animation: rotateConic 2.5s linear infinite;
+}
+
+/* 10. SPOTLIGHT CARD TRACKER */
+.nexus-card-spotlight {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nexus-card-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 59, 47, 0.12),
+    transparent 40%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.nexus-card-spotlight:hover::before {
+  opacity: 1;
+}
+
+.nexus-card-spotlight:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 59, 47, 0.4);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 59, 47, 0.18);
+}
+
+/* KEYFRAMES */
+@keyframes rotateConic {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseCore {
+  from { transform: scale(0.8); opacity: 0.6; }
+  to { transform: scale(1.15); opacity: 1; box-shadow: 0 0 25px #ff3b2f; }
+}

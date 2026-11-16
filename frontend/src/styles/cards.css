@@ -1,0 +1,106 @@
+/* Cinematic Card Styles with Immersive Hover Dynamics */
+
+.nexus-card {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Diagonal glass light swipe on cards */
+.nexus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transform: translateX(-250%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nexus-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--border-focus);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.8), 0 0 30px var(--red-glow);
+}
+
+.nexus-card:hover::before {
+  animation: shineSweep 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Corner Radial Ambient Spotlight */
+.nexus-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at top right, var(--red-glow-bright) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 0;
+}
+
+.nexus-card:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Icon Reactions inside hovered cards */
+.nexus-card:hover svg {
+  color: var(--red-primary);
+  transform: scale(1.1) translateY(-1px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+}
+
+/* Numbers / Metric highlights inside hovered cards */
+.nexus-card:hover .font-mono.font-extrabold {
+  text-shadow: 0 0 20px var(--red-glow-bright);
+  transition: text-shadow 0.3s ease;
+}
+
+/* Static Card Variant */
+.nexus-card-static {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.nexus-card-interactive {
+  cursor: pointer;
+}
+
+/* Status Cards with glowing side accents */
+.card-critical {
+  border-left: 4px solid var(--status-critical);
+  box-shadow: inset 4px 0 12px rgba(255, 59, 47, 0.15);
+}
+
+.card-warning {
+  border-left: 4px solid var(--status-warning);
+  box-shadow: inset 4px 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.card-success {
+  border-left: 4px solid var(--status-success);
+  box-shadow: inset 4px 0 12px rgba(16, 185, 129, 0.15);
+}

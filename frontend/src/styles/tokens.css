@@ -1,0 +1,53 @@
+:root {
+  /* Cinematic Black & Red Color Tokens */
+  --bg-primary: #09090b;
+  --bg-secondary: #111113;
+  --bg-card: #18181b;
+  --bg-card-hover: #1f1f23;
+  --bg-glass: rgba(24, 24, 27, 0.75);
+  --bg-glass-elevated: rgba(30, 30, 36, 0.85);
+
+  /* Primary Accent & Hover Reds */
+  --red-primary: #ff3b2f;
+  --red-hover: #ff5147;
+  --red-glow: rgba(255, 59, 47, 0.22);
+  --red-glow-bright: rgba(255, 59, 47, 0.45);
+  --red-muted: rgba(255, 59, 47, 0.12);
+  --red-border: rgba(255, 59, 47, 0.35);
+
+  /* Functional Status Colors */
+  --status-success: #10b981;
+  --status-success-glow: rgba(16, 185, 129, 0.2);
+  --status-warning: #f59e0b;
+  --status-warning-glow: rgba(245, 158, 11, 0.2);
+  --status-critical: #ff3b2f;
+  --status-critical-glow: rgba(255, 59, 47, 0.3);
+
+  /* Typography Colors */
+  --text-primary: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --text-inverse: #09090b;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-medium: rgba(255, 255, 255, 0.18);
+  --border-focus: rgba(255, 59, 47, 0.6);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 1px rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px var(--red-glow);
+  --shadow-glow: 0 0 35px var(--red-glow);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}

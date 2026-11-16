@@ -1,0 +1,103 @@
+/* Advanced Cinematic Keyframes & Hover Animations */
+
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes laserScan {
+  0% { top: 0%; opacity: 0.8; }
+  50% { top: 98%; opacity: 1; }
+  100% { top: 0%; opacity: 0.8; }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 59, 47, 0.3);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(255, 59, 47, 0.7);
+  }
+}
+
+@keyframes beamFlow {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Diagonal Light Sweep for Premium Hover */
+@keyframes shineSweep {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+/* Subtle Floating Hover */
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Holographic Pulse */
+@keyframes holoPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.anim-laser-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff3b2f, #ffffff, #ff3b2f, transparent);
+  box-shadow: 0 0 15px #ff3b2f, 0 0 30px #ff3b2f;
+  animation: laserScan 2.8s ease-in-out infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.anim-node-pulse {
+  animation: nodePulse 2.5s infinite ease-in-out;
+}
+
+.anim-radar {
+  animation: radarSweep 6s linear infinite;
+}
+
+/* Hover Shimmer Class */
+.hover-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hover-shimmer:hover::before {
+  animation: shineSweep 0.85s ease-in-out;
+}
+
+/* Interactive Magnetic Lift */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.01);
+}

@@ -1,0 +1,472 @@
+/* High-End Light Theme Architecture with Cinematic Black & Red Identity & Dynamic Hovers */
+
+html.light,
+body.light,
+.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.90);
+  --bg-glass-elevated: rgba(255, 255, 255, 0.98);
+
+  /* Cinematic Red Accent for Light Mode - NEVER Purple */
+  --red-primary: #ff3b2f;
+  --red-hover: #dc2626;
+  --red-glow: rgba(255, 59, 47, 0.16);
+  --red-glow-bright: rgba(255, 59, 47, 0.32);
+  --red-muted: rgba(255, 59, 47, 0.08);
+  --red-border: rgba(255, 59, 47, 0.30);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.14);
+  --border-focus: rgba(255, 59, 47, 0.5);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08), 0 0 20px rgba(255, 59, 47, 0.12);
+}
+
+/* Light Backgrounds */
+.light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.light .bg-cinematic-main {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 59, 47, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(239, 68, 68, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 40%, rgba(255, 59, 47, 0.03) 0%, transparent 50%) !important;
+}
+
+.light .bg-cinematic-vignette::before {
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(226, 232, 240, 0.35) 100%) !important;
+}
+
+.light .bg-grid-cyber {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+}
+
+/* Header & Navigation in Light */
+.light header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.light footer {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Primary Brand Button in Light Mode (Cinematic Red) */
+.light .btn-primary {
+  background: linear-gradient(135deg, #ff3b2f 0%, #dc2626 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 59, 47, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(255, 59, 47, 0.28) !important;
+}
+
+.light .btn-primary:hover {
+  background: linear-gradient(135deg, #ff5147 0%, #ef4444 100%) !important;
+  transform: translateY(-2px) scale(1.015) !important;
+  box-shadow: 0 8px 24px rgba(255, 59, 47, 0.4) !important;
+}
+
+/* Cards & Elevated Containers */
+.light .nexus-card {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.08) !important;
+}
+
+.light .nexus-card:hover {
+  border-color: rgba(255, 59, 47, 0.4) !important;
+  transform: translateY(-4px) scale(1.008) !important;
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.08), 0 0 25px rgba(255, 59, 47, 0.12) !important;
+}
+
+.light .nexus-card::after {
+  background: radial-gradient(circle at top right, rgba(255, 59, 47, 0.12) 0%, transparent 70%) !important;
+}
+
+/* Preserve Cinematic Red Accents */
+.light .text-\[\#ff3b2f\],
+.light [class*="text-[#ff3b2f]"] {
+  color: #ff3b2f !important;
+}
+
+.light .text-\[\#ff5147\] {
+  color: #ef4444 !important;
+}
+
+.light .bg-\[\#ff3b2f\] {
+  background-color: #ff3b2f !important;
+}
+
+.light .bg-\[\#ff3b2f\]\/10,
+.light [class*="bg-[#ff3b2f]/10"] {
+  background-color: rgba(255, 59, 47, 0.08) !important;
+}
+
+.light .bg-\[\#ff3b2f\]\/15,
+.light [class*="bg-[#ff3b2f]/15"] {
+  background-color: rgba(255, 59, 47, 0.12) !important;
+}
+
+.light .bg-\[\#ff3b2f\]\/20,
+.light [class*="bg-[#ff3b2f]/20"] {
+  background-color: rgba(255, 59, 47, 0.16) !important;
+}
+
+.light .border-\[\#ff3b2f\] {
+  border-color: #ff3b2f !important;
+}
+
+.light .border-\[rgba\(255\,59\,47\,0\.3\)\] {
+  border-color: rgba(255, 59, 47, 0.3) !important;
+}
+
+.light .border-\[rgba\(255\,59\,47\,0\.35\)\] {
+  border-color: rgba(255, 59, 47, 0.35) !important;
+}
+
+.light .border-\[rgba\(255\,59\,47\,0\.4\)\] {
+  border-color: rgba(255, 59, 47, 0.4) !important;
+}
+
+.light [class*="border-[#ff3b2f]/"] {
+  border-color: rgba(255, 59, 47, 0.3) !important;
+}
+
+/* Progress Bars & Gradients */
+.light .bg-gradient-to-r.from-red-600,
+.light [class*="from-red-600"] {
+  background-image: linear-gradient(to right, #dc2626, #ff3b2f) !important;
+}
+
+/* Typography Remapping in Light */
+.light .hero-title,
+.light .section-title,
+.light h1, .light h2, .light h3, .light h4, .light h5 {
+  color: #0f172a !important;
+}
+
+.light .hero-title {
+  text-shadow: 0 0 30px rgba(255, 59, 47, 0.1) !important;
+}
+
+.light .hero-subtitle {
+  color: #475569 !important;
+}
+
+.light .gradient-text-red {
+  background: linear-gradient(135deg, #0f172a 20%, #ff3b2f 75%, #dc2626 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-zinc-200,
+.light .text-zinc-300 {
+  color: #334155 !important;
+}
+
+.light .text-zinc-400 {
+  color: #64748b !important;
+}
+
+.light .text-\[\#f5f5f5\] {
+  color: #0f172a !important;
+}
+
+.light .text-\[\#a1a1aa\] {
+  color: #64748b !important;
+}
+
+.light .text-\[\#71717a\] {
+  color: #94a3b8 !important;
+}
+
+/* Text-white in light mode → dark text (cards, labels, headings) */
+/* Only apply where text-white is used on light backgrounds (not on colored buttons) */
+.light .nexus-card .text-white,
+.light .nexus-card h3.text-white,
+.light .nexus-card h4.text-white,
+.light .nexus-card span.text-white,
+.light .nexus-card p.text-white,
+.light aside .text-white {
+  color: #0f172a !important;
+}
+
+/* Border white → border subtle */
+.light .border-white {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+.light [class*="border-[rgba(255,255,255,0.06)"],
+.light [class*="border-[rgba(255,255,255,0.08)"],
+.light [class*="border-[rgba(255,255,255,0.1)"] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Background utilities remapped to clean white / slate surfaces */
+.light .bg-\[\#09090b\] {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-\[\#09090b\]\/80 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.light .bg-\[\#09090b\]\/90 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.light .bg-\[\#050507\] {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-\[\#111113\] {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-\[\#111113\]\/90 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+.light .bg-\[\#18181b\] {
+  background-color: #ffffff !important;
+}
+
+.light .bg-\[\#18181b\]\/70 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.light .bg-\[\#18181b\]\/50 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.light .bg-\[\#27272a\] {
+  background-color: #e2e8f0 !important;
+}
+
+/* Light Theme Hover States - NEVER Show Black or Muddy Colors */
+.light .hover\:bg-\[\#09090b\]:hover,
+.light .group-hover\:bg-\[\#09090b\]:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.light .hover\:bg-\[\#1f1f23\]:hover,
+.light [class*="hover:bg-[#1f1f23]"]:hover,
+.light [class*="hover:bg-[#202024]"]:hover {
+  background-color: #fff1f2 !important;
+  color: #ff3b2f !important;
+}
+
+.light .hover\:bg-\[\#18181b\]:hover,
+.light [class*="hover:bg-[#18181b]"]:hover {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.light .hover\:bg-\[\#18181b\]\/70:hover,
+.light .hover\:bg-\[\#18181b\]\/50:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.light .hover\:text-white:hover,
+.light .group-hover\:text-white {
+  color: #ff3b2f !important;
+}
+
+.light .group-hover\:text-\[\#ff3b2f\] {
+  color: #ff3b2f !important;
+}
+
+.light .group-hover\:border-\[\#ff3b2f\] {
+  border-color: #ff3b2f !important;
+  box-shadow: 0 0 15px rgba(255, 59, 47, 0.25) !important;
+}
+
+/* Borders in Light Mode */
+.light [class*="border-[rgba(255,255,255"] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light .border-\[rgba\(255\,255\,255\,0\.04\)\] {
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .border-\[rgba\(255\,255\,255\,0\.06\)\] {
+  border-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+.light .border-\[rgba\(255\,255\,255\,0\.08\)\] {
+  border-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+.light .border-\[rgba\(255\,255\,255\,0\.1\)\] {
+  border-color: rgba(0, 0, 0, 0.11) !important;
+}
+
+.light .border-\[rgba\(255\,255\,255\,0\.12\)\] {
+  border-color: rgba(0, 0, 0, 0.13) !important;
+}
+
+/* Secondary & Ghost Buttons */
+.light .btn-secondary {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .btn-secondary:hover {
+  background-color: #ffffff !important;
+  border-color: rgba(255, 59, 47, 0.45) !important;
+  color: #ff3b2f !important;
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 0 16px rgba(255, 59, 47, 0.14) !important;
+}
+
+.light .btn-ghost {
+  color: #64748b !important;
+}
+
+.light .btn-ghost:hover {
+  color: #ff3b2f !important;
+  background-color: rgba(255, 59, 47, 0.05) !important;
+}
+
+/* Form inputs */
+.light .nexus-input,
+.light .nexus-textarea,
+.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.light .nexus-label {
+  color: #475569 !important;
+}
+
+.light .nexus-input:focus,
+.light .nexus-textarea:focus,
+.light select:focus {
+  border-color: #ff3b2f !important;
+  box-shadow: 0 0 0 3px rgba(255, 59, 47, 0.15) !important;
+}
+
+/* Table styles in Light with reactive hover */
+.light .nexus-table-wrapper {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light .nexus-table th {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light .nexus-table td {
+  color: #0f172a !important;
+  border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .nexus-table tbody tr:hover td {
+  background-color: rgba(255, 59, 47, 0.035) !important;
+}
+
+.light .nexus-table tbody tr:hover td a {
+  color: #ff3b2f !important;
+}
+
+.light .nexus-table tbody tr:hover td a:hover {
+  color: #dc2626 !important;
+}
+
+.light .recharts-tooltip-cursor {
+  fill: rgba(255, 59, 47, 0.05) !important;
+}
+
+.light .nexus-table tbody tr:hover td:first-child {
+  border-left-color: #ff3b2f !important;
+  box-shadow: inset 8px 0 16px -4px rgba(255, 59, 47, 0.18) !important;
+}
+
+/* Upload Dropzone in Light */
+.light .upload-dropzone {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+.light .upload-dropzone:hover,
+.light .upload-dropzone.active {
+  background-color: rgba(255, 59, 47, 0.04) !important;
+  border-color: #ff3b2f !important;
+  box-shadow: inset 0 0 35px rgba(255, 59, 47, 0.08), 0 0 25px rgba(255, 59, 47, 0.15) !important;
+}
+
+.light .file-preview-card {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Sidebar & Workspace in Light */
+.light aside {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Laser scan line in Light Mode */
+.light .anim-laser-line {
+  background: linear-gradient(90deg, transparent, #ff3b2f, #ff7a70, #ff3b2f, transparent) !important;
+  box-shadow: 0 0 15px rgba(255, 59, 47, 0.5) !important;
+}
+
+/* Badges in Light */
+.light .badge-risk-critical {
+  background-color: #fef2f2 !important;
+  color: #dc2626 !important;
+  border-color: #fecaca !important;
+}
+
+.light .badge-risk-high {
+  background-color: #fffbeb !important;
+  color: #d97706 !important;
+  border-color: #fde68a !important;
+}
+
+.light .badge-risk-medium {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+  border-color: #bfdbfe !important;
+}
+
+.light .badge-risk-low {
+  background-color: #f0fdf4 !important;
+  color: #16a34a !important;
+  border-color: #bbf7d0 !important;
+}
+
+

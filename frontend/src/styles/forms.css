@@ -1,0 +1,75 @@
+/* Forms and Interactive Controls with Polished Hover & Focus */
+
+.nexus-input {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.nexus-input:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--bg-card);
+}
+
+.nexus-input:focus {
+  border-color: var(--red-primary);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px var(--red-glow-bright), 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.nexus-input-error {
+  border-color: var(--red-primary) !important;
+  background-color: rgba(255, 59, 47, 0.06);
+  box-shadow: 0 0 0 2px rgba(255, 59, 47, 0.25);
+}
+
+.nexus-label {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.nexus-input:focus + .nexus-label,
+div:focus-within > .nexus-label {
+  color: var(--red-primary);
+}
+
+.nexus-textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 110px;
+  outline: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nexus-textarea:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.nexus-textarea:focus {
+  border-color: var(--red-primary);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px var(--red-glow-bright), 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,63 @@
+/* Cinematic Pure CSS Backgrounds */
+
+.bg-cinematic-main {
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 59, 47, 0.14) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(255, 59, 47, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 40%, rgba(255, 59, 47, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+.bg-cinematic-vignette {
+  position: relative;
+}
+
+.bg-cinematic-vignette::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(9, 9, 11, 0.75) 100%);
+  z-index: 1;
+}
+
+.bg-grid-cyber {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-grid-red {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 59, 47, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 59, 47, 0.04) 1px, transparent 1px);
+}
+
+.ambient-spotlight {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 59, 47, 0.16) 0%, rgba(255, 59, 47, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-elevated {
+  background: var(--bg-glass-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-md);
+}

@@ -1,0 +1,129 @@
+/* High-End Tabular Styling with Reactive Row Hovers */
+
+.nexus-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nexus-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.nexus-table th {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nexus-table td {
+  padding: 1.1rem 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nexus-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Reactive Row Hover Effects */
+.nexus-table tbody tr {
+  position: relative;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.nexus-table tbody tr:hover td {
+  background-color: rgba(255, 59, 47, 0.06);
+  color: var(--text-primary);
+}
+
+.nexus-table tbody tr:hover td:first-child {
+  border-left: 3px solid var(--red-primary);
+  box-shadow: inset 8px 0 16px -4px var(--red-glow);
+  padding-left: calc(1.25rem - 3px);
+}
+
+.nexus-table tbody tr:hover svg {
+  color: var(--red-primary);
+  transform: scale(1.15) translateX(2px);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Badges with Hover Micro-Interactions */
+.badge-risk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.badge-risk:hover {
+  transform: scale(1.06) translateY(-1px);
+}
+
+.badge-risk-critical {
+  background-color: rgba(255, 59, 47, 0.15);
+  color: #ff5147;
+  border: 1px solid rgba(255, 59, 47, 0.4);
+}
+
+.badge-risk-critical:hover {
+  background-color: rgba(255, 59, 47, 0.25);
+  box-shadow: 0 0 15px rgba(255, 59, 47, 0.45);
+}
+
+.badge-risk-high {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-risk-high:hover {
+  background-color: rgba(245, 158, 11, 0.25);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
+
+.badge-risk-medium {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.badge-risk-medium:hover {
+  background-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+}
+
+.badge-risk-low {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.badge-risk-low:hover {
+  background-color: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+}
