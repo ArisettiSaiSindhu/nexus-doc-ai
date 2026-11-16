@@ -36,7 +36,13 @@ useEffect(() => {
   const total = Number(document.total_amount || 0).toFixed(2);
   const items = document.items_data || [];
   const pageCount = document.page_count || 1;
-  const previewUrl = document.preview_url;
+ const API_ORIGIN = (
+  import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+).replace(/\/+$/, '');
+
+const previewUrl = document.preview_url
+  ? new URL(document.preview_url, `${API_ORIGIN}/`).href
+  : '';
 
   const handleZoomIn = () => setZoom((prev) => Math.min(prev + 0.15, 1.6));
   const handleZoomOut = () => setZoom((prev) => Math.max(prev - 0.15, 0.7));
@@ -155,7 +161,7 @@ useEffect(() => {
             className="relative shadow-2xl rounded-lg overflow-hidden border border-[var(--border-subtle)] transition-transform duration-200"
           >
             <img
-              src={pageCount > 1 ? `/api/preview/${document.id}?page=${currentPage - 1}` : previewUrl}
+              src={previewUrl}
               alt={`Uploaded Invoice Scan Page ${currentPage}`}
               className="max-w-[580px] w-full h-auto block select-none pointer-events-none"
             />
